@@ -1,0 +1,220 @@
+:root {
+  /*Primary*/
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+  /*Accent*/
+  --Blue: hsl(248, 32%, 49%);
+  /*Neutral*/
+  --DarkBlue: hsl(249, 10%, 26%);
+  --GrayishBlue: hsl(246, 25%, 77%);
+}
+body {
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-image: url(/images/bg-intro-mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--Red);
+  text-align: center;
+  color: white;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 50px 300px 100px auto 50px;
+  row-gap: 20px;
+}
+.descrition {
+  grid-area: 2 / 2 / span 1 / span 1;
+  width: 100%;
+}
+.descrition main {
+  line-height: 28px;
+  font-size: 19px;
+}
+.offer {
+  grid-area: 3 / 2 / span 1 / span 1;
+  background-color: var(--Blue);
+  border-radius: 15px;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.3);
+}
+.offer p {
+  width: 200px;
+}
+.offer span {
+  font-weight: 300;
+  font-stretch: condensed;
+  letter-spacing: 2px;
+}
+.formulario {
+  grid-area: 4 / 2 / span 1 / span 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+.formulario input {
+  height: 50px;
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+::placeholder {
+  font-weight: 700;
+  text-align: none;
+}
+input[type] {
+  padding-left: 20px;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px 0px var(--Red);
+}
+input.active-error {
+  border: 1px solid var(--Red);
+}
+.error-msj {
+  color: var(--Red);
+  margin: 5px 0 5px 0;
+  text-align: right;
+  width: 95%;
+  font-size: 12px;
+  font-weight: 100;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.error-msj.active {
+  opacity: 1;
+  max-height: 70px;
+}
+#icon-error-first_name {
+  width: 25px;
+  position: absolute;
+  transform: translate(-40px, 13px);
+  opacity: 0;
+}
+#icon-error-last_name {
+  width: 25px;
+  position: absolute;
+  transform: translate(-40px, 13px);
+  opacity: 0;
+}
+#icon-error-email {
+  width: 25px;
+  position: absolute;
+  transform: translate(-40px, 13px);
+  opacity: 0;
+}
+#icon-error-password {
+  width: 25px;
+  position: absolute;
+  transform: translate(-40px, 13px);
+  opacity: 0;
+}
+.buttom-form {
+  background-color: var(--Green);
+  margin-top: 20px;
+  width: 100%;
+  cursor: pointer;
+  height: 65px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+.buttom-form:active {
+  transform: scale(0.9);
+}
+.terms {
+  line-height: 25px;
+}
+.terms span {
+  color: var(--GrayishBlue);
+}
+.terms a {
+  color: var(--Red);
+  font-weight: 700;
+  text-decoration: none;
+}
+footer {
+  grid-area: 5 / 2 / span 1 / span 1;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 660px) {
+  body {
+    width: 100%;
+    height: 786px;
+    display: grid;
+    grid-template-columns: 120px auto 600px 120px;
+    grid-template-rows: 88px 50px auto 85px;
+    position: relative;
+    background-image: url(/images/bg-intro-desktop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .descrition {
+    grid-area: 2 / 2 / span 2 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    width: 100%;
+    padding-right: 80px;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .offer {
+    grid-area: 2 / 3 / span 1 / span 1;
+  }
+  .offer p {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+  }
+  .formulario {
+    grid-area: 3 / 3 / span 1 / span 1;
+  }
+  footer {
+    grid-area: 4 / 1 / span 2 / span 4;
+    margin: 0;
+    padding: 0;
+  }
+  .attribution {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
